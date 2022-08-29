@@ -11,7 +11,7 @@ public class Repository {
     }
 
     public Product findById(int id) {
-        for (Product product: products) {
+        for (Product product : products) {
             if (product.getId() == id) {
                 return product;
             }
@@ -21,16 +21,13 @@ public class Repository {
 
     public void removeByID(int id) throws NotFoundException {
         if (findById(id) == null) {
-           throw new NotFoundException(
-                    "ID " + id + "не найден");
-           // System.out.println( "ID " + id + " не найден");
+            System.out.println("ID " + id + " не найден");
+            throw new NotFoundException(
+                    "ID " + id + " не найден");
         }
-
-
-
         Product[] tmp = new Product[products.length - 1];
         int copyToIndex = 0;
-        for (Product product: products) {
+        for (Product product : products) {
             if (product.getId() != id) {
                 tmp[copyToIndex] = product;
                 copyToIndex++;

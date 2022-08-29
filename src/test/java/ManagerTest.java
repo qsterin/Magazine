@@ -20,9 +20,8 @@ class ManagerTest {
         manager.add(phone1);
         manager.add(phone2);
         Assertions.assertThrows(NotFoundException.class, () -> {
-                    manager.removeByID(73);
-                }
-        );
+            manager.removeByID(73);
+        });
     }
 
     @Test
